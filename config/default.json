@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "2696cc3b350957bcff86295b2297c60fd30c35f087c90d1df549e499e4dccfa3a3f14548ec3a9aac02925619970a7a5470870268b460f309476c534c30980d359ce6ab5ea25c6d698e99b68e6a5ec0351703bf486170b8568f882e014c99a9d3899a67011686a3ff98ebaff617fda848da1bbd83d5128b27e6a8c09a361a8bfb114c01c000170a598da4dd14f2c28a344f11e917f66195e9809b62c1306fd0ea04fc9168d7664a4b42480f3fb865ce2b2acdeb02d8f36172be0f0fc35a7768ed3a8048cb96e1c45cc6cf340bb140844c63f06be82a7f124cd0a5d3fe9be7602ea0fabc2d391fe51ee21404fa754d1b3c42afc9743a9df5f9e14f97c4ade49e60",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/games_api"
+}
