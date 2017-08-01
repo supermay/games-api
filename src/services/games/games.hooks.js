@@ -8,14 +8,16 @@ const checkWinner = require('../../hooks/check-winner');
 
 const populatePlayers = require('../../hooks/populate-players');
 
+const setStone = require('../../hooks/set-stone');
+
 module.exports = {
   before: {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
     create: [createGame()],
-    update: [joinGame(), checkWinner()],
-    patch: [joinGame(), checkWinner()],
+    update: [joinGame(), checkWinner(), setStone()],
+    patch: [joinGame(), checkWinner(), setStone()],
     remove: []
   },
 

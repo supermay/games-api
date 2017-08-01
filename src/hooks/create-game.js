@@ -28,6 +28,10 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
       }
     }
 
+    // have to change the data in database
+    // hook.data.board = board
+    // have to make sure that all ***intersection generated
+
     return Promise.resolve(hook);
   };
 };

@@ -9,7 +9,7 @@ module.exports = function (app) {
   const intersectionSchema = new Schema({
     x: { type: Number, required: true},
     y: { type: Number, required: true},
-    occupied: { type: String, default: ''}  
+    occupied: { type: String, default: ''}
   });
 
   const playerSchema = new Schema({
