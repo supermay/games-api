@@ -29,7 +29,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
     }
 
     hook.data.board = board;
-    
+
     return Promise.resolve(hook);
   };
 };
