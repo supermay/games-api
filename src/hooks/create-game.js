@@ -10,25 +10,11 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
     hook.data.userId = user._id,
     // add the owner to the players, as the first player in the game
     hook.data.players = [{
-      userId: user._id,
-      pairs: []
+      userId: user._id
     }];
 
     // Create a 15 * 15 empty board
-
-    const board = [];
-
-    for(let x = 1; x <= 15; x++) {
-      for(let y = 1; y <= 15; y++) {
-        board.push({
-          x: x,
-          y: y,
-          occupied: ''
-        });
-      }
-    }
-
-    hook.data.board = board;
+    hook.data.board = Array(15).fill(Array(15).fill(''));
 
     return Promise.resolve(hook);
   };
